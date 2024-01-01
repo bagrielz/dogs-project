@@ -56,7 +56,7 @@ export function USER_POST(body) {
   };
 }
 
-// Esse método cria um novo usuário
+// Esse método posta uma nova foto
 export function PHOTO_POST(formData, token) {
   return {
     url: API_URL + "/api/photo",
@@ -66,6 +66,17 @@ export function PHOTO_POST(formData, token) {
         Authorization: "Bearer" + token,
       },
       body: formData,
+    },
+  };
+}
+
+// Esse método puxa as fotos
+export function PHOTOS_GET({ page, total, user }) {
+  return {
+    url: `${API_URL}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
+    options: {
+      method: "GET",
+      cache: "no-store",
     },
   };
 }
