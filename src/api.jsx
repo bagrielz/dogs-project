@@ -55,3 +55,17 @@ export function USER_POST(body) {
     },
   };
 }
+
+// Esse método cria um novo usuário
+export function PHOTO_POST(formData, token) {
+  return {
+    url: API_URL + "/api/photo",
+    options: {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer" + token,
+      },
+      body: formData,
+    },
+  };
+}
