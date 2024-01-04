@@ -80,3 +80,14 @@ export function PHOTOS_GET({ page, total, user }) {
     },
   };
 }
+
+// Esse método puxa uma única foto
+export function PHOTO_GET(id) {
+  return {
+    url: `${API_URL}/api/photo/${id}`,
+    options: {
+      method: "GET",
+      cache: "no-store",
+    },
+  };
+}
