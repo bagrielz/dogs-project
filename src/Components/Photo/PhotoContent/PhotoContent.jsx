@@ -13,9 +13,9 @@ export const PhotoContent = ({ data }) => {
       </div>
       <div className={styles.details}>
         <div>
-          <p>
+          <p className={styles.author}>
             <Link to={`/foto/${photo.author}`}>@{photo.author}</Link>
-            <span className={styles.views}>{photo.access}</span>
+            <span className={styles.views}>{photo.acessos}</span>
           </p>
 
           <h1 className="title">
