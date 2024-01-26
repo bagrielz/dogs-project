@@ -6,6 +6,7 @@ import LostPassword from "../LostPassword";
 import ResetPassword from "../ResetPassword";
 import { UserContext } from "../../../UserContext";
 import styles from "./Login.module.css";
+import NotFound from "../../NotFound/NotFound";
 
 const Login = () => {
   // Sempre que o usuário estiver logado, a página de login será redirecionada à página de minha conta
@@ -20,6 +21,7 @@ const Login = () => {
           <Route path="criar" element={<CreateAccount />} />
           <Route path="perdeu" element={<LostPassword />} />
           <Route path="resetar" element={<ResetPassword />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </section>
