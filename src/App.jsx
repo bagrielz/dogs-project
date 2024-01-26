@@ -14,6 +14,7 @@ import ProtectedRoute from "./Components/Helper/ProtectedRoute";
 import User from "./Components/User/User";
 import Photo from "./Components/Photo/Photo";
 import UserProfile from "./Components/User/UserProfile";
+import NotFound from "./Components/NotFound/NotFound";
 
 function App() {
   return (
@@ -35,6 +36,8 @@ function App() {
             />
             <Route path="foto/:id" element={<Photo />} />
             <Route path="perfil/:user" element={<UserProfile />} />
+            {/* Qualquer rota que não seja uma das mencionadas acima, mostre o erro de página não encontrada */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
         </UserStorage>
