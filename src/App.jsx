@@ -18,27 +18,29 @@ import NotFound from "./Components/NotFound/NotFound";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <BrowserRouter>
         <UserStorage>
           <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            {/* Quando há uma rota com sub-rotas, é necessário adicionar "/*" apontando que dentro de "/login" existem outras rotas também */}
-            <Route path="login/*" element={<Login />} />
-            <Route
-              path="conta/*"
-              element={
-                <ProtectedRoute>
-                  <User />
-                </ProtectedRoute>
-              }
-            />
-            <Route path="foto/:id" element={<Photo />} />
-            <Route path="perfil/:user" element={<UserProfile />} />
-            {/* Qualquer rota que não seja uma das mencionadas acima, mostre o erro de página não encontrada */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <main className="AppBody">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              {/* Quando há uma rota com sub-rotas, é necessário adicionar "/*" apontando que dentro de "/login" existem outras rotas também */}
+              <Route path="login/*" element={<Login />} />
+              <Route
+                path="conta/*"
+                element={
+                  <ProtectedRoute>
+                    <User />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="foto/:id" element={<Photo />} />
+              <Route path="perfil/:user" element={<UserProfile />} />
+              {/* Qualquer rota que não seja uma das mencionadas acima, mostre o erro de página não encontrada */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
           <Footer />
         </UserStorage>
       </BrowserRouter>
