@@ -12,10 +12,10 @@ const FeedPhotos = ({ page, user, setModalPhoto, setInfinite }) => {
   // O request das fotos é feito quando a home é acessada, portanto utilizamos o useEffect() para mostrar as fotos
   React.useEffect(() => {
     async function fetchPhotos() {
-      const total = 3;
-
+      const total = 6;
       const { url, options } = PHOTOS_GET({ page, total, user });
       const { response, json } = await request(url, options);
+      console.log(json);
 
       if (response && response.ok && json.lenght < total) setInfinite(false);
     }
