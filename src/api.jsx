@@ -120,10 +120,24 @@ export function PHOTO_DELETE(id) {
   };
 }
 
-// Esse método altera a senha do usuário
+// Esse método puxa os dados para alteração da senha
 export function PASSWORD_LOST(body) {
   return {
     url: `${API_URL}/api/password/lost`,
+    options: {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    },
+  };
+}
+
+// Esse método puxa os dados para alteração da senha
+export function PASSWORD_RESET(body) {
+  return {
+    url: `${API_URL}/api/password/reset`,
     options: {
       method: "POST",
       headers: {
