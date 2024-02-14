@@ -147,3 +147,16 @@ export function PASSWORD_RESET(body) {
     },
   };
 }
+
+// Esse método puxa os dados para alteração da senha
+export function STATS_GET() {
+  return {
+    url: `${API_URL}/api/stats`,
+    options: {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer" + window.localStorage.getItem("token"),
+      },
+    },
+  };
+}
