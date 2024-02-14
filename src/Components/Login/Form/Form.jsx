@@ -40,7 +40,7 @@ const Form = () => {
         ) : (
           <Button>Entrar</Button>
         )}
-        <Error error={error} />
+        <Error error={error && "Usuário/senha incorreto"} />
       </form>
 
       <Link className={styles.lost} to="/login/perdeu">
